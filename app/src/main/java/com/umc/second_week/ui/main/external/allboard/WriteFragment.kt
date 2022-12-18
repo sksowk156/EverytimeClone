@@ -53,7 +53,7 @@ class WriteFragment : Fragment() {
         binding.toolbar2.inflateMenu(R.menu.top_menu2)
         binding.toolbar2.setNavigationIcon(R.drawable.ic_baseline_close_24)
         binding.toolbar2.setNavigationOnClickListener {
-            requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.childFragmentManager
+            requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.parentFragmentManager
                 .popBackStackImmediate(null, 0)
         }
 
@@ -73,7 +73,7 @@ class WriteFragment : Fragment() {
             it.getContentIfNotHandled()?.let {
                 Toast.makeText(requireActivity(), "데이터가 저장되었습니다.", Toast.LENGTH_SHORT).show()
                 hideKeyboard()
-                requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.childFragmentManager
+                requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.parentFragmentManager
                     .popBackStackImmediate(null, 0)
             }
         })
@@ -95,7 +95,7 @@ class WriteFragment : Fragment() {
                     val showpopup = PopupFragment()
                     showpopup.show(parentFragmentManager, "showpopup")
                 } else {
-                    requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.childFragmentManager
+                    requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.parentFragmentManager
                         .popBackStackImmediate(null,0)
                 }
                 /* editText의 텍스트 변화 감지 리스너,

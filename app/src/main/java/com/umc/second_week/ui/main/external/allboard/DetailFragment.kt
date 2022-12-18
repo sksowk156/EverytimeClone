@@ -32,7 +32,7 @@ class DetailFragment : Fragment() {
 
         callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.childFragmentManager
+                requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.parentFragmentManager
                     .popBackStack(null, 0)
             }
         }
@@ -84,7 +84,7 @@ class DetailFragment : Fragment() {
         binding.toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24)
         binding.toolbar.setNavigationOnClickListener {
 //            TthirdFragment().childFragmentManager
-            requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.childFragmentManager
+            requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.parentFragmentManager
                 .popBackStackImmediate(null, 0)
 
         }
