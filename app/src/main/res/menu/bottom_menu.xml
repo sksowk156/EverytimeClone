@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cnb_unselectedColor="#AED3D3D3"
+    >
+
+    <item
+        android:id="@+id/aaa"
+        android:icon="@drawable/ic_baseline_block_24"
+        android:title="가나" />
+    <item
+        android:id="@+id/bbb"
+        android:title="다라마"
+        android:icon="@drawable/ic_baseline_block_24" />
+    <item
+        android:id="@+id/ccc"
+        android:title="바"
+        android:icon="@drawable/ic_baseline_block_24" />
+    <item
+        android:id="@+id/ddd"
+        android:title="사아자차"
+        android:icon="@drawable/ic_baseline_block_24" />
+    <item
+        android:id="@+id/eee"
+        android:title="카"
+        android:icon="@drawable/ic_baseline_block_24" />
+</menu>

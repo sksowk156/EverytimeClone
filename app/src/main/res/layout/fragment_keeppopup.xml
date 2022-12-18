@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/keeppopupfragment"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    tools:context=".ui.popup.KeeppopupFragment">
+
+    <TextView
+        android:id="@+id/check_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계속 쓰시겠습니까"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/yesbtn_2"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:text="예"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_text"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/nobtn_2"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="아니오"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/yesbtn_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintStart_toEndOf="@+id/yesbtn_2"
+        app:layout_constraintTop_toTopOf="@+id/yesbtn_2"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

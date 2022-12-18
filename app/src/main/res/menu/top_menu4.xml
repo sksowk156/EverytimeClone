@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/reload"
+        android:enabled="true"
+        app:showAsAction="never"
+        android:title="새로고침" />
+    <item
+        android:id="@+id/fix"
+        android:enabled="true"
+        app:showAsAction="never"
+        android:title="수정" />
+    <item
+        android:id="@+id/delete"
+        android:enabled="true"
+        app:showAsAction="never"
+        android:title="삭제" />
+    <item
+        android:id="@+id/URL"
+        android:enabled="true"
+        app:showAsAction="never"
+        android:title="URL 공유" />
+</menu>
