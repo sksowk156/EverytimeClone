@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:context=".ui.popup.Minipopup3Fragment">
-
-    <TextView
-        android:id="@+id/deletebt"
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="삭제"
-        android:textSize="20sp" />
+        android:orientation="vertical"
+        tools:context=".ui.popup.Minipopup3Fragment">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/deletebt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="삭제"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</layout>

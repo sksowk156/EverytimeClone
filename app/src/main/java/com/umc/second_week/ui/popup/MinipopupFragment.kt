@@ -6,30 +6,46 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import com.umc.second_week.R
 import com.umc.second_week.data.WriteData
 import com.umc.second_week.databinding.FragmentMinipopupBinding
+import com.umc.second_week.ui.BaseDialogFragment
 
-class MinipopupFragment() : DialogFragment() {
+//class MinipopupFragment() : DialogFragment() {
+//
+//    private lateinit var binding : FragmentMinipopupBinding
+//    private lateinit var writeData : WriteData
+//
+//
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        binding = FragmentMinipopupBinding.inflate(inflater,container,false)
+//        writeData = ViewModelProvider(this.requireActivity(), ViewModelProvider.NewInstanceFactory()).get(
+//            WriteData::class.java)
+//
+//        // Inflate the layout for this fragment
+//        return binding.root
+//    }
+//
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        binding.deletebt.setOnClickListener {
+//            writeData.deleteData()
+//            dismiss()
+//        }
+//    }
+//}
 
-    private lateinit var binding : FragmentMinipopupBinding
+class MinipopupFragment : BaseDialogFragment<FragmentMinipopupBinding>(R.layout.fragment_minipopup) {
     private lateinit var writeData : WriteData
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentMinipopupBinding.inflate(inflater,container,false)
-        writeData = ViewModelProvider(this.requireActivity(), ViewModelProvider.NewInstanceFactory()).get(
-            WriteData::class.java)
-
-        // Inflate the layout for this fragment
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun init() {
+        writeData =
+            ViewModelProvider(this.requireActivity(), ViewModelProvider.NewInstanceFactory()).get(
+                WriteData::class.java
+            )
         binding.deletebt.setOnClickListener {
             writeData.deleteData()
             dismiss()

@@ -1,47 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/popupfragment"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:padding="16dp"
-    tools:context=".ui.popup.PopupFragment">
-
-
-    <TextView
-        android:id="@+id/textView13"
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/popupfragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="종료하시겠습니까"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="16dp"
+        tools:context=".ui.popup.PopupFragment">
 
-    <Button
-        android:id="@+id/yesbtn"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:text="예"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/nobtn"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:text="아니오"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/yesbtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.564"
-        app:layout_constraintStart_toEndOf="@+id/yesbtn"
-        app:layout_constraintTop_toTopOf="@+id/yesbtn"
-        app:layout_constraintVertical_bias="0.0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="종료하시겠습니까"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/yesbtn"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:text="예"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/nobtn"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:text="아니오"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/yesbtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.564"
+            app:layout_constraintStart_toEndOf="@+id/yesbtn"
+            app:layout_constraintTop_toTopOf="@+id/yesbtn"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
