@@ -47,10 +47,12 @@ class KeeppopupFragment :
         }
 
         binding.nobtn2.setOnClickListener {
-            parentFragmentManager
-                .beginTransaction()
-                .replace(R.id.secondFragmentFrame, FourthFragment())
-                .commitAllowingStateLoss()
+//            parentFragmentManager
+//                .beginTransaction()
+//                .replace(R.id.secondFragmentFrame, FourthFragment())
+//                .commitAllowingStateLoss()
+            requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.parentFragmentManager
+                .popBackStackImmediate(null, 0)
             dismiss()
         }
     }

@@ -61,7 +61,7 @@ class PopupFragment : BaseDialogFragment<FragmentPopupBinding>(R.layout.fragment
             )
 
         binding.yesbtn.setOnClickListener {
-            requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.childFragmentManager
+            requireActivity().supportFragmentManager.findFragmentByTag("tthird")!!.parentFragmentManager
                 .popBackStackImmediate(null, 0)
 
             writeData.eraseEditTextData()

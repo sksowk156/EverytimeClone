@@ -157,10 +157,6 @@ class WriteFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        Log.d(
-            "ikinary",
-            "멀티윈도우에서 돌아왔을 때, onCreateView도 onViewCreated도 아닌 여기서부터 시작한다. onViewCreated는 TthirdFragment에서만"
-        )
         // 이어서 작성할 건지 물어보기
         if (binding.titleplace.length() != 0 || binding.contentsplace.length() != 0) {
             val showpopup = KeeppopupFragment()
