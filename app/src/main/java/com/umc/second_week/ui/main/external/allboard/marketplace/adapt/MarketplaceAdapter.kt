@@ -1,4 +1,4 @@
-package com.umc.second_week.ui.main.external.allboard.marketplace.adapter
+package com.umc.second_week.ui.main.external.allboard.marketplace.adapt
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
