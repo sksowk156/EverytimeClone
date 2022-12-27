@@ -19,9 +19,9 @@ class MarketplaceAdapter : RecyclerView.Adapter<Holder>(){
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val user = userList?.get(position)
-        if (user != null) {
+
             holder.setUser(user)
-        }
+
     }
 
     override fun getItemCount(): Int {
@@ -32,11 +32,11 @@ class MarketplaceAdapter : RecyclerView.Adapter<Holder>(){
 
 class Holder(val binding : ListItemMarketplaceBinding) : RecyclerView.ViewHolder(binding.root){
 
-    fun setUser(user: MarketplaceDTOItem){
+    fun setUser(user: MarketplaceDTOItem?){
         with(binding){
-            userId.text = user.node_id
-            userName.text = user.full_name
-            Glide.with(userImage).load(user.owner.avatar_url).into(userImage)
+            userId.text = user?.node_id
+            userName.text = user?.full_name
+            Glide.with(userImage).load(user?.owner?.avatar_url).into(userImage)
         }
     }
 }

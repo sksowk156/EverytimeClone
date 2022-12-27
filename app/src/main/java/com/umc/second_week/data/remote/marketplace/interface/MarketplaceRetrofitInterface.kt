@@ -4,8 +4,7 @@ import com.umc.second_week.data.remote.marketplace.dto.MarketplaceDTO
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface MarketplaceService {
+interface MarketplaceRetrofitInterface {
     @GET("users/Kotlin/repos")
     fun kotlinUsers() : Call<MarketplaceDTO>
-
 }
