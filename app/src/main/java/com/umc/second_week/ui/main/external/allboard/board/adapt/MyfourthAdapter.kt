@@ -46,8 +46,6 @@ class MyfourthAdapter(clicklistener: ItemClickListener) :
 
     // ViewHolder에 연결된 View들에 Data를 넣어준다.
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        Log.d("whatisthis", position.toString())
-
         holder.bind(users[position], position)
     }
 

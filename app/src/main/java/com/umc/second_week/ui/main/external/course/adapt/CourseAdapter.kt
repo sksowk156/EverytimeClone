@@ -36,14 +36,12 @@ class CourseAdapter(clicklistener: ItemClickListener) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        Log.d("wwww","여기 여러번 콜됨??")
         val binding =
             ListItemCourseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        Log.d("wwww","여기 여러번 콜됨??2"+position.toString())
         holder.bind(getItem(position))
     }
 }

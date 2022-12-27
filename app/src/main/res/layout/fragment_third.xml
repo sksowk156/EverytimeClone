@@ -69,14 +69,39 @@
                     android:id="@+id/freeboard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="자유게시판"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.501"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.083" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/issue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:text="시사.이슈"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@+id/freeboard"
+                    app:layout_constraintStart_toStartOf="@+id/freeboard"
+                    app:layout_constraintTop_toBottomOf="@+id/freeboard" />
+
+                <TextView
+                    android:id="@+id/marketplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="장터게시판"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/issue"
+                    app:layout_constraintStart_toStartOf="@+id/issue"
+                    app:layout_constraintTop_toBottomOf="@+id/issue"
+                    app:layout_constraintVertical_bias="0.057" />
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
