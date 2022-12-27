@@ -64,22 +64,46 @@ class MarketplaceFragment :
 //                }
 //            }
 
-            // 코루틴 + Repository + ViewModel + ViewModelFactory
+//            // 코루틴 + Repository + ViewModel + ViewModelFactory
+//            val repository = MarketplaceRepository()
+//            val viewModelFactory = MarketplaceViewModelFactory(repository)
+//            viewModel = ViewModelProvider(this@MarketplaceFragment , viewModelFactory).get(MarketplaceViewModel::class.java)
+//            viewModel.kotlinUsers()
+//
+//            viewModel.myResponse.observe(this@MarketplaceFragment.viewLifecycleOwner, Observer {
+//                if(it.isSuccessful){
+//                    it.body()?.let { result ->
+//                        marketplaceAdapter.userList = result
+//                        marketplaceAdapter.notifyDataSetChanged()
+//                    }
+//                }
+//                else{
+//                    Log.d("Response",it.errorBody().toString())
+//                }
+//            })
+//
+
+
+            // 코루틴 + Repository + ViewModel + ViewModelFactory + listadapter
             val repository = MarketplaceRepository()
             val viewModelFactory = MarketplaceViewModelFactory(repository)
-            viewModel = ViewModelProvider(this@MarketplaceFragment.requireActivity() , viewModelFactory).get(MarketplaceViewModel::class.java)
+            viewModel = ViewModelProvider(this@MarketplaceFragment , viewModelFactory).get(MarketplaceViewModel::class.java)
             viewModel.kotlinUsers()
+
             viewModel.myResponse.observe(this@MarketplaceFragment.viewLifecycleOwner, Observer {
                 if(it.isSuccessful){
                     it.body()?.let { result ->
-                        marketplaceAdapter.userList = result
-                        marketplaceAdapter.notifyDataSetChanged()
+                        marketplaceAdapter.submitList(result)
                     }
                 }
                 else{
                     Log.d("Response",it.errorBody().toString())
                 }
             })
+
+
+
+
         }
     }
 }

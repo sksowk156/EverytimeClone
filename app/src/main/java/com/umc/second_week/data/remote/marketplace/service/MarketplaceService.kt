@@ -1,5 +1,6 @@
 package com.umc.second_week.data.remote.marketplace.service
 
+import android.util.Log
 import com.umc.second_week.data.remote.marketplace.`interface`.MarketplaceRetrofitInterface
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
