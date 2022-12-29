@@ -6,7 +6,7 @@ import retrofit2.Response
 
 class MarketplaceRepository {
 
-    suspend fun kotlinUsers() : Response<MarketplaceDTO>{
-        return MarketplaceService.marketplaceservice.kotlinUsers()
+    suspend fun Users() : Response<MarketplaceDTO>{
+        return MarketplaceService.marketplaceservice.Users()
     }
 }

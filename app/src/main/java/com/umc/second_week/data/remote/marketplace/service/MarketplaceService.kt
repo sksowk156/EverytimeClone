@@ -16,4 +16,5 @@ object MarketplaceService {
     val marketplaceservice : MarketplaceRetrofitInterface by lazy {
         retrofit.create(MarketplaceRetrofitInterface::class.java)
     }
+
 }

@@ -16,7 +16,7 @@ class MarketplaceViewModel(private val repository: MarketplaceRepository) : View
 
     fun kotlinUsers() {
         viewModelScope.launch {
-            val response = repository.kotlinUsers()
+            val response = repository.Users()
             _myResponse.value = response
         }
     }
