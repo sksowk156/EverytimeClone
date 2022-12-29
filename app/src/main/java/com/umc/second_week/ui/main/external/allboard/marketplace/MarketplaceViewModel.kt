@@ -14,7 +14,7 @@ class MarketplaceViewModel(private val repository: MarketplaceRepository) : View
 
 //    val myResponse: MutableLiveData<Response<MarketplaceDTO>> = MutableLiveData()
 
-    fun kotlinUsers() {
+    fun Users() {
         viewModelScope.launch {
             val response = repository.Users()
             _myResponse.value = response

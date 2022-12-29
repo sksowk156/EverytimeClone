@@ -9,10 +9,10 @@ import retrofit2.http.Path
 
 interface MarketplaceRetrofitInterface {
     @GET("users")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token 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")
     suspend fun Users() : Response<MarketplaceDTO>
 
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token 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")
     @GET("users/{login}")
     suspend fun UsersLogin(
         @Path("login") login : String

@@ -18,7 +18,7 @@ import kotlinx.coroutines.withContext
 class MarketplaceFragment :
     BaseFragment<FragmentMarketplaceBinding>(R.layout.fragment_marketplace) {
 
-    private lateinit var viewModel : MarketplaceViewModel
+    private lateinit var viewModel: MarketplaceViewModel
 
     override fun init() {
         initAPI()
@@ -84,60 +84,60 @@ class MarketplaceFragment :
 //
 
 
-//            // 코루틴 + Repository + ViewModel + ViewModelFactory + listadapter
-//            val repository = MarketplaceRepository()
-//            val viewModelFactory = MarketplaceViewModelFactory(repository)
-//            viewModel = ViewModelProvider(this@MarketplaceFragment , viewModelFactory).get(MarketplaceViewModel::class.java)
-//            viewModel.kotlinUsers()
+            // 코루틴 + Repository + ViewModel + ViewModelFactory + listadapter
+            val repository = MarketplaceRepository()
+            val viewModelFactory = MarketplaceViewModelFactory(repository)
+            viewModel = ViewModelProvider(this@MarketplaceFragment, viewModelFactory).get(
+                MarketplaceViewModel::class.java
+            )
+            viewModel.Users()
+
+            viewModel.myResponse.observe(this@MarketplaceFragment.viewLifecycleOwner, Observer {
+                if (it.isSuccessful) {
+                    it.body()?.let { result ->
+                        marketplaceAdapter.submitList(result)
+                    }
+                } else {
+                    Log.d("Response", it.errorBody().toString())
+                }
+            })
+
+
+//            // 코루틴 + @Path 경로 설정
+//            search.setOnClickListener {
+//                CoroutineScope(Dispatchers.IO).launch {
+//                    if(marketplaceSearch.text.length==0){
 //
-//            viewModel.myResponse.observe(this@MarketplaceFragment.viewLifecycleOwner, Observer {
-//                if(it.isSuccessful){
-//                    it.body()?.let { result ->
-//                        marketplaceAdapter.submitList(result)
+//                        val response = marketplaceservice.Users()
+//
+//                        withContext(Dispatchers.Main) {
+//                            if (response.isSuccessful) {
+//                                response.body()?.let { result ->
+//                                    marketplaceSearchresult.text = ""
+//                                    marketplaceAdapter.userList = result
+//                                    marketplaceAdapter.notifyDataSetChanged()
+//                                }
+//                            } else {
+//                                Log.d("TAG", response.code().toString())
+//                            }
+//                        }
+//                    }else{
+//                        marketplaceAdapter.userList = null
+//
+//                        val response = marketplaceservice.UsersLogin(marketplaceSearch.text.toString())
+//                        withContext(Dispatchers.Main) {
+//                            if (response.isSuccessful) {
+//                                response.body()?.let { result ->
+//                                    marketplaceSearchresult.text = result.id.toString()
+//                                }
+//                            } else {
+//                                marketplaceSearchresult.text = "없음"
+//                                Log.d("TAG", response.code().toString())
+//                            }
+//                        }
 //                    }
 //                }
-//                else{
-//                    Log.d("Response",it.errorBody().toString())
-//                }
-//            })
-
-            // 코루틴
-            search.setOnClickListener {
-                CoroutineScope(Dispatchers.IO).launch {
-                    if(marketplaceSearch.text.length==0){
-
-                        val response = marketplaceservice.Users()
-
-                        withContext(Dispatchers.Main) {
-                            if (response.isSuccessful) {
-                                response.body()?.let { result ->
-                                    marketplaceSearchresult.text = ""
-                                    marketplaceAdapter.userList = result
-                                    marketplaceAdapter.notifyDataSetChanged()
-                                }
-                            } else {
-                                Log.d("TAG", response.code().toString())
-                            }
-                        }
-                    }else{
-                        marketplaceAdapter.userList = null
-
-                        val response = marketplaceservice.UsersLogin(marketplaceSearch.text.toString())
-                        withContext(Dispatchers.Main) {
-                            if (response.isSuccessful) {
-                                response.body()?.let { result ->
-                                    marketplaceSearchresult.text = result.id.toString()
-                                }
-                            } else {
-                                marketplaceSearchresult.text = "없음"
-                                Log.d("TAG", response.code().toString())
-                            }
-                        }
-                    }
-
-                }
-
-            }
+//           }
         }
     }
 }
