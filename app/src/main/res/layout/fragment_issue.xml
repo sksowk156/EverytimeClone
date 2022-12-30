@@ -2,53 +2,33 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/issue_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.main.external.allboard.marketplace.MarketplaceFragment"
+        tools:context=".ui.main.external.allboard.issue.IssueFragment"
         android:background="@color/white"
         android:clickable="true">
 
-        <TextView
-            android:id="@+id/search"
-            android:layout_width="44dp"
-            android:layout_height="wrap_content"
-            android:text="검색"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="목록"
-            android:textSize="30sp"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/marketplace_search" />
-
-        <EditText
-            android:id="@+id/marketplace_search"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="id"
-            android:inputType="textPersonName"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/search"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/marketplace_recyclerview"
+            android:id="@+id/issue_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/list" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

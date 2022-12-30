@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.umc.second_week.R
 import com.umc.second_week.databinding.FragmentThirdBinding
 import com.umc.second_week.ui.main.external.allboard.board.FourthFragment
+import com.umc.second_week.ui.main.external.allboard.issue.IssueFragment
 import com.umc.second_week.ui.main.external.allboard.marketplace.MarketplaceFragment
 import com.umc.second_week.ui.main.external.allboard.mine.MytextFragment
 
@@ -24,6 +25,7 @@ class ThirdFragment : Fragment(), View.OnClickListener {
         binding.freeboard.setOnClickListener(this)
         binding.mytext.setOnClickListener(this)
         binding.marketplace.setOnClickListener(this)
+        binding.issue.setOnClickListener(this)
         return binding.root
     }
 
@@ -59,6 +61,13 @@ class ThirdFragment : Fragment(), View.OnClickListener {
                 parentFragmentManager // TthirdFragment를 가리킨다.
                     .beginTransaction()
                     .replace(R.id.secondFragmentFrame, MarketplaceFragment())
+                    .addToBackStack(null)
+                    .commitAllowingStateLoss()
+            }
+            R.id.issue ->{
+                parentFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.secondFragmentFrame, IssueFragment())
                     .addToBackStack(null)
                     .commitAllowingStateLoss()
             }

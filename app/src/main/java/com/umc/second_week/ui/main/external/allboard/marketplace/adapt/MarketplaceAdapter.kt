@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.umc.second_week.data.remote.marketplace.dto.MarketplaceDTO
 import com.umc.second_week.data.remote.marketplace.dto.MarketplaceDTOItem
 import com.umc.second_week.databinding.ListItemMarketplaceBinding
 
