@@ -33,17 +33,25 @@ class IssueFragment : BaseFragment<FragmentIssueBinding>(R.layout.fragment_issue
             viewModel = ViewModelProvider(this@IssueFragment, viewModelFactory).get(
                 IssueViewModel::class.java
             )
-            viewModel.issue("20201201")
 
-            viewModel.myResponse.observe(this@IssueFragment.viewLifecycleOwner, Observer {
-                if (it.isSuccessful) {
-                    it.body()
-                        ?.let { result ->
-                            issueAdapter.submitList(result?.boxOfficeResult?.dailyBoxOfficeList)
-                        }
-                } else {
-                    Toast.makeText(context, "데이터가 없습니다.", Toast.LENGTH_SHORT).show()
-                }
+
+//            // fragment에서 API 초기화
+//            viewModel.issue("20201201")
+//            viewModel.myResponse.observe(this@IssueFragment.viewLifecycleOwner, Observer {
+//                if (it.isSuccessful) {
+//                    it.body()
+//                        ?.let { result ->
+//                            issueAdapter.submitList(result?.boxOfficeResult?.dailyBoxOfficeList)
+//                        }
+//                } else {
+//                    Toast.makeText(context, "데이터가 없습니다.", Toast.LENGTH_SHORT).show()
+//                }
+//            })
+
+            // application class에서 API 초기화
+            viewModel.issueAPI("20201201")
+            viewModel.myResponse.observe(this@IssueFragment.viewLifecycleOwner, Observer { result->
+                issueAdapter.submitList(result?.body()?.boxOfficeResult?.dailyBoxOfficeList)
             })
 
 

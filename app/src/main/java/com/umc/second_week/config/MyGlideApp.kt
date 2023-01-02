@@ -1,4 +1,4 @@
-package com.umc.second_week
+package com.umc.second_week.config
 
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule
