@@ -33,7 +33,7 @@ class IssueFragment : BaseFragment<FragmentIssueBinding>(R.layout.fragment_issue
             viewModel = ViewModelProvider(this@IssueFragment, viewModelFactory).get(
                 IssueViewModel::class.java
             )
-            viewModel.issue("b08827bfc21dfdcb4841d808ca556c3d", "20201201")
+            viewModel.issue("20201201")
 
             viewModel.myResponse.observe(this@IssueFragment.viewLifecycleOwner, Observer {
                 if (it.isSuccessful) {

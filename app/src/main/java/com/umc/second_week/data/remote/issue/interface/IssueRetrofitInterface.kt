@@ -9,7 +9,7 @@ import retrofit2.http.Query
 interface IssueRetrofitInterface {
     @GET("kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json")
     suspend fun getBoxOffice(
-        @Query("key") key : String,
+//        @Query("key") key : String,
         @Query("targetDt") targetDt : String
     ) : Response<IssueDTO>
 }

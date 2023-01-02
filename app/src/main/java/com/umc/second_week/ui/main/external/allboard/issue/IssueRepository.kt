@@ -7,8 +7,7 @@ import com.umc.second_week.data.remote.issue.service.IssueService
 import retrofit2.Response
 
 class IssueRepository {
-    suspend fun issue(key : String, targetDt : String) : Response<IssueDTO> {
-        Log.d("whatisthis",IssueService.issueservice.getBoxOffice(key, targetDt).toString())
-        return IssueService.issueservice.getBoxOffice(key, targetDt)
+    suspend fun issue(targetDt : String) : Response<IssueDTO> {
+        return IssueService.issueservice.getBoxOffice(targetDt)
     }
 }

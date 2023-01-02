@@ -15,10 +15,9 @@ class IssueViewModel (private val repository: IssueRepository) : ViewModel() {
     private var _myResponse = MutableLiveData<Response<IssueDTO>>()
     val myResponse: LiveData<Response<IssueDTO>> get() = _myResponse
 
-    fun issue(key:String, targetDt : String){
+    fun issue(targetDt : String){
         viewModelScope.launch {
-            Log.d("whatisthis", key.toString())
-            val response = repository.issue(key, targetDt)
+            val response = repository.issue(targetDt)
             _myResponse.value = response
         }
     }
